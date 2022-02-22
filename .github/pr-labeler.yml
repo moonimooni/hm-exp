@@ -1,0 +1,6 @@
+bug: ['fix/*']
+documentation: ['docs/*']
+enhancement: ['feat/*']
+misc: ['misc/*']
+typo: ['*typo*']
+refactoring: ['refactor/*']

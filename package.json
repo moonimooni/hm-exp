@@ -1,0 +1,47 @@
+{
+  "name": "express-vue-boilerplate",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "api"
+  ],
+  "scripts": {
+    "serve:web": "vue-cli-service serve",
+    "serve:api": "cd api && npm start",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "clean": "rimraf ./dist ./node_modules",
+    "test": "jest --detectOpenHandles --forceExit"
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "core-js": "^3.6.5",
+    "dayjs": "^1.10.7",
+    "dotenv": "^14.3.2",
+    "lodash": "^4.17.21",
+    "pino": "^7.6.5",
+    "vue": "^2.6.11",
+    "vue-router": "^3.5.3"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.15",
+    "@vue/cli-plugin-eslint": "~4.5.15",
+    "@vue/cli-service": "~4.5.15",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.4.6",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "jest": "^27.4.7",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "stylelint": "^14.3.0",
+    "stylelint-config-html": "^1.0.0",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-webpack-plugin": "^2.3.2",
+    "vue-eslint-parser": "^8.2.0",
+    "vue-template-compiler": "^2.6.11"
+  }
+}

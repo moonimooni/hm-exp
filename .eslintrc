@@ -1,0 +1,18 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+  "extends": ["plugin:prettier/recommended", "prettier"],
+  "plugins": ["import", "vue"],
+  "rules": {
+    "vue/no-unused-components": "off"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "clean": "rimraf ./node_modules",
+    "test": "jest --detectOpenHandles --forceExit",
+    "lint": "eslint ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "knex": "^1.0.1"
+  },
+  "devDependencies": {
+    "supertest": "^6.2.2"
+  }
+}
