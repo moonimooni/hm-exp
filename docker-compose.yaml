@@ -19,3 +19,13 @@ services:
     restart: unless-stopped
     ports:
       - '6379:6379'
+  web-api:
+    build: .
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=local
+      - API_PORT=${API_PORT_LOCAL}
+      - WEB_PORT=${WEB_PORT_LOCAL}
+    ports:
+      - ${API_PORT_LOCAL}:${API_PORT_LOCAL}
+      - ${WEB_PORT_LOCAL}:${WEB_PORT_LOCAL}
