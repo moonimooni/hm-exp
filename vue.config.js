@@ -18,8 +18,8 @@ module.exports = {
   },
   chainWebpack: (webpackConfig) => {
     webpackConfig.output
-      .filename(`js/[name].[hash:8].js`)
-      .chunkFilename(`js/[name].[hash:8].js`);
+      .filename(`./assets/js/[name].[hash:8].js`)
+      .chunkFilename(`./assets/js/[name].[hash:8].js`);
     webpackConfig
       .plugin('stylelint-webpack-plugin')
       .use('stylelint-webpack-plugin')
