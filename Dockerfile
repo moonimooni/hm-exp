@@ -25,7 +25,4 @@ COPY . /app
 EXPOSE $API_PORT
 EXPOSE $WEB_PORT
 
-CMD ["npm", "run", "test"]
-CMD ["npm", "run", "lint"]
-CMD ["npm", "run" "build"]
-CMD ["sh","-c", "npm run serve:api & npm run serve:web"]
+ENTRYPOINT ["sh", "-c", "npm run test ; npm run lint ; npm run build ; npm run serve:api & npm run serve:web"]
