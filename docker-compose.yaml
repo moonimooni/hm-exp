@@ -20,12 +20,13 @@ services:
     ports:
       - '6379:6379'
   web-api:
+    depends_on:
+      - mysql
+      - redis
     build: .
     restart: unless-stopped
-    environment:
-      - NODE_ENV=local
-      - API_PORT=${API_PORT_LOCAL}
-      - WEB_PORT=${WEB_PORT_LOCAL}
+    env_file:
+      - .env
     ports:
       - ${API_PORT_LOCAL}:${API_PORT_LOCAL}
       - ${WEB_PORT_LOCAL}:${WEB_PORT_LOCAL}
