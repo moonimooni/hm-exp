@@ -4,11 +4,6 @@ FROM node:16-alpine3.14
 # bash install
 RUN apk add bash
 
-# Set the timezone in docker
-RUN apk --no-cache add tzdata && \
-        cp /usr/share/zoneinfo/Asia/Seoul /etc/localtime && \
-        echo "Asia/Seoul" > /etc/timezone
-
 WORKDIR /app
 
 RUN mkdir -p /app/api
@@ -24,5 +19,3 @@ COPY . /app
 # Docker Demon Port Mapping
 EXPOSE $API_PORT
 EXPOSE $WEB_PORT
-
-ENTRYPOINT ["sh", "-c", "npm run test ; npm run lint ; npm run build ; npm run serve:api & npm run serve:web"]

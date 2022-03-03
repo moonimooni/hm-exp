@@ -5,6 +5,9 @@ const { router } = require('./routes');
 
 const app = express();
 
+const knex = require('knex')(config.mysql);
+knex.migrate.latest();
+
 app.use(express.json());
 app.use(cors());
 app.use('/api', router);
