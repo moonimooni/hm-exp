@@ -17,5 +17,5 @@ RUN npm install
 COPY . /app
 
 # Docker Demon Port Mapping
-EXPOSE $API_PORT
-EXPOSE $WEB_PORT
+EXPOSE 8081
+EXPOSE 8080

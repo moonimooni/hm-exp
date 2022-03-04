@@ -15,7 +15,7 @@ services:
     ports:
       - '3306:3306'
     healthcheck:
-      test: mysql --user=${MYSQL_USER} --password=${MYSQL_ROOT_PASSWORD} ${MYSQL_DATABASE} -e 'select 1';
+      test: mysql --user=root --password=root hm_local -e 'select 1';
       interval: 1s
       timeout: 3s
       retries: 30
@@ -25,7 +25,7 @@ services:
     ports:
       - '6379:6379'
     healthcheck:
-      test: ['CMD', 'redis-cli', 'ping']
+      test: [ 'CMD', 'redis-cli', 'ping' ]
       interval: 1s
       timeout: 3s
       retries: 30
@@ -41,5 +41,5 @@ services:
     env_file:
       - .env
     ports:
-      - ${API_PORT_LOCAL}:${API_PORT_LOCAL}
-      - ${WEB_PORT_LOCAL}:${WEB_PORT_LOCAL}
+      - 8081:8081
+      - 8080:8080
