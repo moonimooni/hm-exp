@@ -6,6 +6,9 @@
   "module": "index.js",
   "scripts": {
     "start": "node index.js",
+    "migrate:latest": "knex migrate:latest",
+    "migrate:up": "knex migrate:up",
+    "migrate:down": "knex migrate:down",
     "clean": "rimraf ./node_modules",
     "test": "jest --detectOpenHandles --forceExit",
     "lint": "eslint ."
