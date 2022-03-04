@@ -2,10 +2,9 @@ require('dotenv').config();
 
 const { merge } = require('lodash');
 const env = process.env.NODE_ENV ?? 'local';
-const isLocal = env === 'local' || env === 'test';
 
 let config = { environment: env, ...require('./default') };
-if (!isLocal) {
+if (env !== 'local') {
   config = merge(config, require(`./${env}`));
 }
 
