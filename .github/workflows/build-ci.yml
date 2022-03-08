@@ -39,3 +39,5 @@ jobs:
         env:
           NODE_ENV: develop
           CI: true
+      - name: Common Util Test
+        run: npm run test ./utils
