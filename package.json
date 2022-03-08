@@ -21,7 +21,9 @@
     "lodash": "^4.17.21",
     "pino": "^7.6.5",
     "vue": "^2.6.11",
-    "vue-router": "^3.5.3"
+    "vue-router": "^3.5.3",
+    "winston": "^3.6.0",
+    "winston-daily-rotate-file": "^4.6.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",
