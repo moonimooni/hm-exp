@@ -11,7 +11,9 @@
     "migrate:down": "knex migrate:down",
     "clean": "rimraf ./node_modules",
     "test": "jest --detectOpenHandles --forceExit",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build": "echo no build",
+    "serve": "npm start"
   },
   "author": "",
   "license": "ISC",
