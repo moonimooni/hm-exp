@@ -1,14 +1,31 @@
-const { knex } = require('knex');
+const Knex = require('knex');
+const config = require('../../config');
+
+const databaseClient = Knex(config.mysql);
 
 class BaseDao {
-  constructor() {}
+  /**
+   * @readonly
+   * @private
+   */
+  #client;
 
-  find() {}
-  findAll() {}
-  update() {}
-  create() {}
+  /**@readonly */ tableName;
+  /**@readonly */ queryBuilder;
 
-  // and so on...
+  constructor({ tableName }) {
+    this.tableName = tableName;
+    this.#client = databaseClient;
+    this.queryBuilder = this.#client(tableName);
+  }
+
+  async selectById(id) {
+    return this.queryBuilder.where('id', id).limit(1);
+  }
+
+  async selectAll() {
+    return this.queryBuilder.select('*');
+  }
 }
 
 module.exports = { BaseDao };
