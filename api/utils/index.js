@@ -4,6 +4,7 @@ const {
   BadRequestException,
   UnauthorizedException,
   ForbiddenException,
+  NotFoundException,
 } = require('./BaseException');
 
 module.exports = {
@@ -12,4 +13,5 @@ module.exports = {
   BadRequestException,
   UnauthorizedException,
   ForbiddenException,
+  NotFoundException,
 };
