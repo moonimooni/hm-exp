@@ -32,10 +32,14 @@ module.exports = {
       });
   },
   devServer: {
-    publicPath: '/',
-    progress: false,
-    disableHostCheck: true,
+    allowedHosts: 'all',
     port: config.web.port,
+    devMiddleware: {
+      publicPath: '/',
+    },
+    client: {
+      progress: true,
+    },
     proxy: {
       '/api': {
         target: config.api.baseUrl,
