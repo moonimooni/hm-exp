@@ -51,7 +51,7 @@ class NotFoundException extends BaseException {
     let message = 'NOT FOUND';
     const code = 404;
     if (property) {
-      message = `${message} ${property}`;
+      message = `${property} ${message}`;
     }
     super({ code, message });
     this.property = property;
