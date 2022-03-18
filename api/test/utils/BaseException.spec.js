@@ -118,7 +118,7 @@ describe('NotFoundException', () => {
       }
     } catch (error) {
       expect(error.code).toBe(404);
-      expect(error.message).toBe('NOT FOUND POST');
+      expect(error.message).toBe('POST NOT FOUND');
     }
   });
 });
