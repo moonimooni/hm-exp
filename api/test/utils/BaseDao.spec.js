@@ -9,9 +9,11 @@ describe('BaseDao', () => {
   beforeAll(async () => {
     knex = Knex(mysql);
     await knex.migrate.latest({
-      directory: './test/global-database-setup/migrations',
+      directory: __dirname + '/../global-database-setup/migrations',
     });
-    await knex.seed.run({ directory: './test/global-database-setup/seeds' });
+    await knex.seed.run({
+      directory: __dirname + '/../global-database-setup/seeds',
+    });
   });
 
   afterAll(async () => {
