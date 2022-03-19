@@ -1,6 +1,6 @@
 const Knex = require('knex');
 const Builder = require('knex/lib/query/querybuilder');
-const mysql = require('../global-database-setup/knexfile');
+const mysql = require('../../knexfile');
 const { BaseDao } = require('../../utils');
 
 describe('BaseDao', () => {
@@ -9,10 +9,10 @@ describe('BaseDao', () => {
   beforeAll(async () => {
     knex = Knex(mysql);
     await knex.migrate.latest({
-      directory: __dirname + '/../global-database-setup/migrations',
+      directory: __dirname + '/../../migrations',
     });
     await knex.seed.run({
-      directory: __dirname + '/../global-database-setup/seeds',
+      directory: __dirname + '/../seeds',
     });
   });
 
@@ -33,9 +33,9 @@ describe('BaseDao', () => {
     expect(users[0].id).toBe(1);
     expect(users[1].id).toBe(2);
     expect(users[2].id).toBe(3);
-    expect(users[0].name).toBe('foo');
-    expect(users[1].name).toBe('bar');
-    expect(users[2].name).toBe('baz');
+    expect(users[0].type).toBe('MOM');
+    expect(users[1].type).toBe('DAD');
+    expect(users[2].type).toBe('SISTER');
   });
 
   test('selectById', async () => {
@@ -43,6 +43,7 @@ describe('BaseDao', () => {
     expect(Array.isArray(user1)).toBe(true);
     expect(user1).toHaveLength(1);
     expect(user1[0].id).toBe(1);
-    expect(user1[0].name).toBe('foo');
+    expect(user1[0].type).toBe('MOM');
+    expect(user1[0].phone_number).toBe('010-0000-0000');
   });
 });
