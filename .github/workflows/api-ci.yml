@@ -27,15 +27,15 @@ jobs:
           mysql -uroot -proot -e "CREATE DATABASE IF NOT EXISTS hm_test CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;"
       - name: Install dependencies
         run: npm ci
-      - name: Api Test
-        working-directory: ./api
-        run: npm test
-      - name: Lint Test
-        working-directory: ./api
-        run: npm run lint
       - name: Migrate Test
         working-directory: ./api
         run: npm run migrate:latest
         env:
           NODE_ENV: test
           CI: true
+      - name: Api Test
+        working-directory: ./api
+        run: npm test
+      - name: Lint Test
+        working-directory: ./api
+        run: npm run lint

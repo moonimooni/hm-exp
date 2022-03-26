@@ -1,9 +1,10 @@
-const { BaseDao } = require('../../utils');
+const { BaseDao } = require('../../utils'); // TODO
 
 // TODO: use query builder!
-class SampleDao extends BaseDao {
+class SampleDao {
   constructor() {
-    super();
+    // TODO
+    // super();
   }
 
   getSample() {
