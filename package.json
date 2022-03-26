@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "axios": "^0.25.0",
+    "change-case": "^4.1.2",
     "core-js": "^3.6.5",
     "dayjs": "^1.10.7",
     "dotenv": "^14.3.2",
